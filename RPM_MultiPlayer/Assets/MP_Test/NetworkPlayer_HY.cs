@@ -3,7 +3,6 @@ using UnityEngine;
 using Unity.Netcode;
 using Unity.Collections;
 using ReadyPlayerMe.Core;
-//using Random = UnityEngine.Random;
 
 namespace ReadyPlayerMe.NetcodeSupport
 {
@@ -29,12 +28,8 @@ namespace ReadyPlayerMe.NetcodeSupport
 
         private SkinnedMeshRenderer[] skinnedMeshRenderers;
 
-        //[SerializeField]
-        //private Vector2 defaultPositionRange = new Vector2(-4, 4);
-
         private void Awake()
         {
-
             animator = GetComponent<Animator>();
 
             leftEye = transform.Find(FULL_BODY_LEFT_EYE_BONE_NAME);
@@ -47,9 +42,6 @@ namespace ReadyPlayerMe.NetcodeSupport
         {
             if (IsOwner)
             {
-                //transform.position = new Vector3(Random.Range(defaultPositionRange.x, defaultPositionRange.y), 0 , 
-                //Random.Range(defaultPositionRange.x, defaultPositionRange.y));
-
                 avatarUrl.Value = InputUrl;
                 avatarUrl.OnValueChanged += (value, newValue) =>
                 {
@@ -102,6 +94,7 @@ namespace ReadyPlayerMe.NetcodeSupport
             animator.avatar = avatar;
             OnPLayerLoadComplete?.Invoke();
             Destroy(source);
+            gameObject.GetComponent<SyncBlendShape>().enabled = true;
         }
     }
 }

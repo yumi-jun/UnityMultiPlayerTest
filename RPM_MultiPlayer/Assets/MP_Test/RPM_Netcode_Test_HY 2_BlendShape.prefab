@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &228092157835122168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7058162942085380786}
+  - component: {fileID: 851399593841788780}
+  m_Layer: 0
+  m_Name: SyncBlendShape
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7058162942085380786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228092157835122168}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8261794115828541676}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &851399593841788780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228092157835122168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c66846f1c1cb3e489a48879bdcfcbb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blendShapeCount: 67
 --- !u!1 &3507528663851560162
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +209,7 @@ PrefabInstance:
     - target: {fileID: -1016906781056901136, guid: f626a595ba3f9d641a6f794a171c66f8,
         type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 2019302318
+      value: 1207790129
       objectReference: {fileID: 0}
     - target: {fileID: 527308785482030337, guid: f626a595ba3f9d641a6f794a171c66f8,
         type: 3}
@@ -199,7 +244,7 @@ PrefabInstance:
     - target: {fileID: 1192642991364198764, guid: f626a595ba3f9d641a6f794a171c66f8,
         type: 3}
       propertyPath: m_Name
-      value: RPM_Netcode_Test_HY
+      value: RPM_Netcode_Test_HY 2_BlendShape
       objectReference: {fileID: 0}
     - target: {fileID: 4959210049948067057, guid: f626a595ba3f9d641a6f794a171c66f8,
         type: 3}
@@ -276,6 +321,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6494602864191840131}
+    - targetCorrespondingSourceObject: {fileID: 7968283499595012214, guid: f626a595ba3f9d641a6f794a171c66f8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7058162942085380786}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1192642991364198764, guid: f626a595ba3f9d641a6f794a171c66f8,
         type: 3}
@@ -292,7 +341,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1192642991364198764, guid: f626a595ba3f9d641a6f794a171c66f8,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: -4453934649882775372}
+      addedObject: {fileID: 4341656989199522576}
   m_SourcePrefab: {fileID: 100100000, guid: f626a595ba3f9d641a6f794a171c66f8, type: 3}
 --- !u!1 &918681697409016310 stripped
 GameObject:
@@ -357,7 +406,7 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 1
   SlerpPosition: 0
---- !u!114 &-4453934649882775372
+--- !u!114 &4341656989199522576
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
