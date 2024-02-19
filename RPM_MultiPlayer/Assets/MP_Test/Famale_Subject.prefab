@@ -1470,7 +1470,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1191607449551737610}
   - component: {fileID: 2962867371882057856}
-  - component: {fileID: 1907041504644848034}
   - component: {fileID: 1172982492492001627}
   m_Layer: 0
   m_Name: Camera
@@ -1545,14 +1544,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &1907041504644848034
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6012747203994010597}
-  m_Enabled: 1
 --- !u!114 &1172982492492001627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1996,6 +1987,7 @@ GameObject:
   - component: {fileID: -4653071374157729597}
   - component: {fileID: 8993440160194268138}
   - component: {fileID: 1832640415506094715}
+  - component: {fileID: 2415751018215206160}
   m_Layer: 0
   m_Name: Famale_Subject
   m_TagString: Untagged
@@ -2136,6 +2128,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TransitionStateInfoList: []
   m_Animator: {fileID: 3381622258846187801}
+--- !u!114 &2415751018215206160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7720267085172302752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c66846f1c1cb3e489a48879bdcfcbb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blendShapeCount: 67
 --- !u!1 &7775293804955262134
 GameObject:
   m_ObjectHideFlags: 0

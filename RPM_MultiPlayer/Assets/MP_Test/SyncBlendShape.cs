@@ -8,9 +8,8 @@ public class SyncBlendShape : NetworkBehaviour
     private SkinnedMeshRenderer player_skinnedMeshRenderer;
     public int blendShapeCount = 67;
     private float[] blendShapeValue = null;
-    private bool isRendererReady = false;
 
-    private void OnEnable()
+    public override void OnNetworkSpawn()
     {
         InitializeBlendShape();
     }
@@ -26,12 +25,13 @@ public class SyncBlendShape : NetworkBehaviour
 
     public void InitializeBlendShape()
     {
-        if(blendShapeCount == null)
+        if(blendShapeCount < 1)
         {
             return;
         }
 
-        player_skinnedMeshRenderer = transform.parent.gameObject.GetComponentInChildren<SkinnedMeshRenderer>();
+        //player_skinnedMeshRenderer = transform.parent.gameObject.GetComponentInChildren<SkinnedMeshRenderer>();
+        player_skinnedMeshRenderer = gameObject.GetComponentInChildren<SkinnedMeshRenderer>();
         Debug.Log(player_skinnedMeshRenderer);
         blendShapeValue = new float[blendShapeCount];
         for(int i = 0; i < blendShapeCount; i++)

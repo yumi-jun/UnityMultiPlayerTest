@@ -63,7 +63,10 @@ namespace ReadyPlayerMe.NetcodeSupport
         public void StartGame()
         {
             if (NetworkManager.Singleton.IsHost)
+            {
                 NetworkManager.Singleton.SceneManager.LoadScene("AvatarControl_HY 3_Spawn 1", LoadSceneMode.Single);
+            }
+                
         }
     }
 }
