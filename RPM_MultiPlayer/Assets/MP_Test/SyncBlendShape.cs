@@ -49,35 +49,28 @@ public class SyncBlendShape : NetworkBehaviour
 
     private void UpdateBlendShape()
     {
-        GetBlendShape();
-        SetBlendShape();
-        if (IsLocalPlayer)
+        if(!IsOwner) 
         {
-            if (!IsServer)
-            {
-                UpdateBlendShapeServerRpc();
-            }
-            else
-            {
-                UpdateBlendShapeClientRpc();
-            }
+            return;
         }
+        GetBlendShape();
+
+        UpdateBlendShapeServerRpc(blendShapeValue);
+
+        SetBlendShape(blendShapeValue);
     }
 
     private void GetBlendShape()
     {
-        //if(!IsLocalPlayer) return;
-
         for (int i = 0; i < blendShapeCount; i++)
         {
             blendShapeValue[i] = player_skinnedMeshRenderer.GetBlendShapeWeight(i);
         }
     }
 
-    private void SetBlendShape()
+    private void SetBlendShape(float[] value)
     {
-        //if(IsLocalPlayer || IsServer) return;
-
+        blendShapeValue = (float[])value.Clone();
         for (int i = 0; i < blendShapeCount; i++)
         {
             player_skinnedMeshRenderer.SetBlendShapeWeight(i, blendShapeValue[i]);
@@ -85,20 +78,19 @@ public class SyncBlendShape : NetworkBehaviour
     }
 
     [ServerRpc]
-    private void UpdateBlendShapeServerRpc()
+    private void UpdateBlendShapeServerRpc(float[] value)
     {
-        if (!IsLocalPlayer) UpdateBlendShape(); //SetBlendShape();
-        UpdateBlendShapeClientRpc();
+        UpdateBlendShapeClientRpc(value);
     }
 
     [ClientRpc]
-    private void UpdateBlendShapeClientRpc()
+    private void UpdateBlendShapeClientRpc(float[] value)
     {
-        if (IsLocalPlayer || IsServer)
+        if (IsOwner) 
         {
             return;
         }
-        UpdateBlendShape();
-        //SetBlendShape();
+
+        SetBlendShape(value);
     }
 }
