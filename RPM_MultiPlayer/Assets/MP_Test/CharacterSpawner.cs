@@ -12,6 +12,8 @@ public class CharacterSpawner : NetworkBehaviour
 
     private Vector3 spawnPos;
 
+    private GameObject characterInstance;
+
     public override void OnNetworkSpawn()
     {
         if (!IsServer) { return; }
@@ -34,7 +36,14 @@ public class CharacterSpawner : NetworkBehaviour
                 }
 
                 var characterInstance = Instantiate(character.GamePlayerPrefab, spawnPos, Quaternion.identity);
-                characterInstance.SpawnAsPlayerObject(client.Value.ClientId);
+                characterInstance.GetComponent<NetworkObject>().SpawnAsPlayerObject(client.Value.ClientId);
+                
+                
+            }
+
+            if (!IsOwner)
+            {
+               // FindObjectsOfType(NetworkObject)
             }
         }
     }
