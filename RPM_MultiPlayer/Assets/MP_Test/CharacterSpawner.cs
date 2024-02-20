@@ -23,7 +23,7 @@ public class CharacterSpawner : NetworkBehaviour
             if (character != null)
             {
                 // when the client is host
-                if (IsHost)
+                if (client.Value.ClientId==0) 
                 {
                     spawnPos = point.position;
                 }
