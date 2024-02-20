@@ -75,9 +75,8 @@ public class ServerManager : MonoBehaviour
 
         // 조건에 충족하면 접속한 Client ID 로 Client 객체를 만든다.
         ClientData[arg1.ClientNetworkId] = new ClientData(arg1.ClientNetworkId);
-        Debug.Log($"add client {arg1.ClientNetworkId} and sum of the Client is {ClientData.Count}");
-
-    }
+        Debug.Log($"add client {arg1.ClientNetworkId} and sum of the Client is {ClientData.Count} and {ClientData.Keys}");}
+    
     
     private void OnNetworkReady()
     {
